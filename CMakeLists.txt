@@ -13,14 +13,17 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geometry_msgs
   plan_env
+  path_searching
   cv_bridge
+
+  message_filters
 )
 
 # catkin_package(CATKIN_DEPENDS message_runtime)
 catkin_package(
 # INCLUDE_DIRS include
  LIBRARIES esdf_planner
- CATKIN_DEPENDS plan_env 
+ CATKIN_DEPENDS plan_env #path_searching
 #  DEPENDS system_lib
 )
 
@@ -37,6 +40,26 @@ add_executable(esdf_planner
   src/esdf_planner.cpp
   )
 
+add_executable(test_synchronization
+  src/test_synchronization.cpp
+  )
+
+add_executable(exp_sync
+  src/sync_example.cpp
+  )
+
 target_link_libraries(esdf_planner 
   ${catkin_LIBRARIES}
   )
+
+target_link_libraries(test_synchronization
+  ${catkin_LIBRARIES}
+  )
+
+target_link_libraries(exp_sync
+  ${catkin_LIBRARIES}
+  )
+
+#catkin_install_python(PROGRAMS scripts/getDepth.py scripts/depth_img.py
+#  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)

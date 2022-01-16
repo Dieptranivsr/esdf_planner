@@ -12,6 +12,7 @@ if __name__ == '__main__':
 
     parent_frame = rospy.get_param('~parent_frame', 'map')
     camera_frame = rospy.get_param('~child_frame','camera_link')
+    # camera_frame = rospy.get_param('~child_frame','camera_depth_optical_frame')
     pose_topic = rospy.get_param('~pose_topic','camera/pose')
 
     pose_pub = rospy.Publisher(pose_topic, PoseStamped, queue_size=1)
