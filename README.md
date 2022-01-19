@@ -1,6 +1,8 @@
 # esdf_planner
 separate esdf package in fast_planner
-
+```shell
+  $ roslaunch mavros px4.launch fcu_url:=/dev/ttyTHS1:921600
+```
 ```shell
   $ roslaunch esdf_planner px4_esdf_planner.launch
 ```
@@ -9,4 +11,7 @@ separate esdf package in fast_planner
 ```
 ```shell
   $ rosrun tf view_frames && evince frames.pdf
+```
+```shell
+  $ rosrun tf tf_echo map base_link
 ```
