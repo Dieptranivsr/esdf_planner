@@ -1,4 +1,0 @@
-<launch>
-    <node pkg="esdf_planner" name="exp_sync" type="exp_sync" output="screen">
-    </node>
-</launch>

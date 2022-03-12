@@ -27,7 +27,7 @@
     </include>
 
     <!-- ESDF -->
-    <include file="$(find esdf_planner)/launch/hitl/hitl_esdf.launch" >
+    <include file="$(find esdf_planner)/launch/exp/exp_esdf.launch" >
     </include>
 
     <!-- Geometric controller -->
@@ -47,12 +47,12 @@
     
     <!-- Camera pose publisher -->
     <!-- This node publishes tf from parent_frame to child_frame-->
-    <node pkg="esdf_planner" name="camera_pose_publisher" type="camera_pose_publisher.py" output="screen">
+    <node pkg="esdf_planner" name="px4_camera_pose_publisher" type="camera_pose_publisher.py" output="screen">
         <param name="parent_frame" value="world" />
         <param name="child_frame" value="camera_link" />
         <param name="pose_topic" value="camera/pose" />
     </node>
 
     <!-- Rviz -->
-    <include file="$(find esdf_planner)/launch/hitl/hitl_rviz.launch" />
+    <include file="$(find esdf_planner)/launch/exp/rviz.launch" />
 </launch>
