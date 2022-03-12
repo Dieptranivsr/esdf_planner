@@ -1,5 +1,5 @@
 # esdf_planner
-separate esdf package from fast_planner
+separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Robotics/Fast-Planner)
 ```shell
   $ roslaunch mavros px4.launch fcu_url:=/dev/ttyTHS1:921600
 ```
