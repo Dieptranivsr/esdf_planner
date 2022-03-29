@@ -26,5 +26,5 @@ separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Roboti
 ## Record bag files
 ```shell
   $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)"
-  $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)|(.*)global_position(.*)"
+  $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)|(.*)global_position(.*)|(.*)imu(.*)"
 ```
