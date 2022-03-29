@@ -23,7 +23,7 @@ separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Roboti
   $ rosrun tf tf_echo map base_link
 ```
 
-## Record bag files
+## Record bag files. Furthermore, Reduce bag file's capacity
 ```shell
   $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)"
   $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)|(.*)global_position(.*)|(.*)imu(.*)"
