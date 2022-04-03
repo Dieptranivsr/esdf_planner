@@ -1,7 +1,7 @@
 # esdf_planner
 separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Robotics/Fast-Planner)
 
-![1857017bf72939776038](https://user-images.githubusercontent.com/69444682/160658182-89b4e271-4fe5-4c73-b2d9-41fdee4f34c7.jpg)
+<img src="https://user-images.githubusercontent.com/69444682/160658182-89b4e271-4fe5-4c73-b2d9-41fdee4f34c7.jpg" width="500">
 
 ## Initialize Px4 (Get GPS data)
 ```shell
