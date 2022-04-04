@@ -1,0 +1,64 @@
+<launch>
+
+    <!-- For sim -->
+    <arg name="use_gazebo" default="true"/>
+
+    <!-- MAVROS configs -->
+    <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
+
+    <arg name="max_acc" default="2.5" />
+
+    <!-- drone's position in Gazebo -->
+    <arg name="init_pos_x" default="0.0" />
+    <arg name="init_pos_y" default="0.0" />
+    <!-- takeoff height -->
+    <arg name="takeoff_height" default="1.0" />
+
+    <!-- ROS static transformation -->
+    <node pkg="tf" type="static_transform_publisher" name="world_map_linker" args="0 0 0 0 0 0 world map 100" />
+    <!--<node pkg="tf" type="static_transform_publisher" name="tf_camera" args="0.1 0 0.0 -1.57 0 -1.57 base_link camera_link 43"/>-->
+    <node pkg="tf" type="static_transform_publisher" name="tf_camera" args="0.1 0 0.0 -1.57 0 -1.57 base_link camera_link 43"/>
+    <!--<node pkg="tf" type="static_transform_publisher" name="pose1_camera" args="0.0 0 0.0 0 0 0 camera_link camera_depth_frame 43"/>
+    <node pkg="tf" type="static_transform_publisher" name="pose2_camera" args="0.0 0 0.0 0 0 0 camera_depth_frame camera_depth_optical_frame 43"/>-->
+    <!--<node pkg="tf" type="static_transform_publisher" name="tf_camera" args="0.1 0 0.0 -1.57 0 -1.57 base_link camera_depth_optical_frame 43"/>-->
+    <!-- camera_depth_frame-->
+
+    <!-- MAVROS + PX4 + Gazebo -->
+    <include file="$(find esdf_planner)/launch/mavros.launch" >
+        <arg name="use_gazebo" value="$(arg use_gazebo)"/>
+        <arg name="fcu_url" value="$(arg fcu_url)"/>
+        <arg name="x" value="$(arg init_pos_x)"/>
+        <arg name="y" value="$(arg init_pos_y)"/>
+    </include>
+
+    <!-- ESDF -->
+    <include file="$(find esdf_planner)/launch/experiment/exp_esdf.launch" >
+    </include>
+
+    <!-- Geometric controller -->
+    <include file="$(find esdf_planner)/launch/geometric_controller.launch">
+        <arg name="gazebo_simulation" value="$(arg use_gazebo)" />
+        <arg name="max_acc" value="$(arg max_acc)" />
+        <param name="Kp_x" value="6.0" />
+        <param name="Kp_y" value="6.0" />
+        <param name="Kp_z" value="10.0" />
+        <param name="Kv_x" value="1.5" />
+        <param name="Kv_y" value="1.5" />
+        <param name="Kv_z" value="3.5" />
+        <arg name="init_pos_x" value="0.0" />
+        <arg name="init_pos_y" value="0.0" />
+        <arg name="init_pos_z" value="$(arg takeoff_height)" />
+    </include>
+    
+    <!-- Camera pose publisher -->
+    <!-- This node publishes tf from parent_frame to child_frame-->
+    <node pkg="esdf_planner" name="camera_pose_publisher" type="camera_pose_publisher.py" output="screen">
+        <param name="parent_frame" value="world" />
+        <param name="child_frame" value="camera_link" />
+        <!--<param name="child_frame" value="camera_depth_optical_frame" />-->
+        <param name="pose_topic" value="camera/pose" />
+    </node>
+
+    <!-- Rviz -->
+    <include file="$(find esdf_planner)/launch/experiment/exp_rviz.launch" />
+</launch>

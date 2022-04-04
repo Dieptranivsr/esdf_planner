@@ -27,7 +27,7 @@
     </include>
 
     <!-- ESDF -->
-    <include file="$(find esdf_planner)/launch/exp/exp_esdf.launch" >
+    <include file="$(find esdf_planner)/launch/sim/px4_esdf.launch" >
     </include>
 
     <!-- Geometric controller -->
@@ -54,5 +54,5 @@
     </node>
 
     <!-- Rviz -->
-    <include file="$(find esdf_planner)/launch/exp/rviz.launch" />
+    <include file="$(find esdf_planner)/launch/sim/rviz.launch" />
 </launch>

@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="esdf_planner" name="test_abc" type="test_abc" output="screen">
+    </node>
+</launch>
