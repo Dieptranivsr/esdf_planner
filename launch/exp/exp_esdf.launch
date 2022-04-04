@@ -1,7 +1,7 @@
 <launch>
   <!-- global parameters -->
-  <arg name="map_size_x" default="15.0"/>
-  <arg name="map_size_y" default="15.0"/>
+  <arg name="map_size_x" default="30.0"/>
+  <arg name="map_size_y" default="30.0"/>
   <arg name="map_size_z" default=" 5.0"/>
 
   <arg name="odom_topic" default="/mavros/local_position/odom" />
