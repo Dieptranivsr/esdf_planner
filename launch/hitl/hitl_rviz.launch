@@ -1,3 +1,3 @@
 <launch>
-  <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find esdf_planner)/rviz/hitl_rviz.rviz" />
+  <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find esdf_planner)/rviz/rviz.rviz" />
 </launch>

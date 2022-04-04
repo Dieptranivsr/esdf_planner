@@ -1,0 +1,40 @@
+<launch>
+
+    <!-- For sim -->
+    <arg name="use_gazebo" default="true"/>
+
+    <!-- MAVROS configs -->
+    <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
+
+    <arg name="max_acc" default="2.5" />
+
+    <!-- Initial drone's position in Gazebo -->
+    <arg name="init_pos_x" default="0.0" />
+    <arg name="init_pos_y" default="0.0" />
+    <!-- takeoff height -->
+    <arg name="takeoff_height" default="1.0" />
+
+    <!-- MAVROS + PX4 + Gazebo -->
+    <include file="$(find esdf_planner)/launch/mavros.launch" >
+        <arg name="use_gazebo" value="$(arg use_gazebo)"/>
+        <arg name="fcu_url" value="$(arg fcu_url)"/>
+        <arg name="x" value="$(arg init_pos_x)"/>
+        <arg name="y" value="$(arg init_pos_y)"/>
+    </include>
+
+    <!-- Geometric controller -->
+    <include file="$(find esdf_planner)/launch/geometric_controller.launch">
+        <arg name="gazebo_simulation" value="$(arg use_gazebo)" />
+        <arg name="max_acc" value="$(arg max_acc)" />
+        <param name="Kp_x" value="6.0" />
+        <param name="Kp_y" value="6.0" />
+        <param name="Kp_z" value="10.0" />
+        <param name="Kv_x" value="1.5" />
+        <param name="Kv_y" value="1.5" />
+        <param name="Kv_z" value="3.5" />
+        <arg name="init_pos_x" value="0.0" />
+        <arg name="init_pos_y" value="0.0" />
+        <arg name="init_pos_z" value="$(arg takeoff_height)" />
+    </include>
+
+</launch>
