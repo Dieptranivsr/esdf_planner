@@ -29,10 +29,14 @@
     <arg name="depth_topic" value="$(arg depth_topic)"/>
 
     <!-- intrinsic params of the depth camera gazebo model 640x480 -->
-    <arg name="cx" value="320.5"/>
-    <arg name="cy" value="240.5"/>
-    <arg name="fx" value="343.49636753580074"/>
-    <arg name="fy" value="343.49636753580074"/>
+    <arg name="cx" value="313.88287353515625"/>
+    <arg name="cy" value="238.2814483642578"/>
+    <arg name="fx" value="383.8480224609375"/>
+    <arg name="fy" value="383.8480224609375"/>
+    <!-- fps = 30 -->
+    <!-- K: [423.8321838378906, 0.0, 417.2456970214844, 0.0, 423.8321838378906, 238.10243225097656, 0.0, 0.0, 1.0] -->
+    <!-- fps = 15 -->
+    <!-- K: [383.8480224609375, 0.0, 313.88287353515625, 0.0, 383.8480224609375, 238.2814483642578, 0.0, 0.0, 1.0]-->
     <!-- maximum velocity and acceleration the drone will reach -->
     <arg name="max_acc" value="$(arg max_acc)" />
     
