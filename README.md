@@ -5,7 +5,7 @@ separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Roboti
 
 ## Initialize Px4 (Get GPS data)
 ```shell
-  $ roslaunch mavros px4.launch fcu_url:=/dev/ttyTHS1:921600
+  $ roslaunch mavros px4.launch fcu_url:="/dev/ttyTHS1:921600"
 ```
 
 ## Initialize Depth Camera D435
