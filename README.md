@@ -16,7 +16,6 @@ separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Roboti
 ## Roslaunch mains_node
 ```shell
   $ roslaunch esdf_planner exp_esdf_planner.launch
-  $ roslaunch esdf_planner hitl_esdf_planner.launch
 ```
 ```shell
   $ rosrun tf view_frames && evince frames.pdf
@@ -32,6 +31,10 @@ separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Roboti
 ```
 
 ## Simulation
+```shell
+$ roslaunch esdf_planner sim.launch
+$ roslaunch esdf_planner hitl_esdf_planner.launch
+```
 ```shell
 $ roslaunch esdf_planner px4_esdf_planner.launch
 ```
