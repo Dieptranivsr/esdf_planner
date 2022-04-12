@@ -81,3 +81,11 @@ points:
     nsecs: 0" 
 publishing and latching message for 3.0 seconds
 ```
+
+## Experiment
+```shell
+$ roslaunch px4_fast_planner mavros.launch
+```
+```shell
+$ roslaunch px4_fast_planner geometric_controller.launch
+```
