@@ -93,3 +93,6 @@ $ roslaunch px4_fast_planner geometric_controller.launch
 # SITL
 $ roslaunch esdf_planner hitl_esdf_planner.launch
 ```
+```shell
+$ export GAZEBO_MODEL_PATH=`pwd`/models
+```
