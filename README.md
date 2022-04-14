@@ -27,7 +27,7 @@ separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Roboti
 ## Record bag files. Furthermore, Reduce bag file's capacity
 ```shell
   $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)"
-  $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)|(.*)global_position(.*)|(.*)imu(.*)"
+  $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)|(.*)global_position(.*)|(.*)imu(.*)|(.*)geometric_controller(.*)|(.*)reference(.*)"
 ```
 
 ## Simulation
