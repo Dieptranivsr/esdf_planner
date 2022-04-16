@@ -28,6 +28,7 @@ separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Roboti
 ```shell
   $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)"
   $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)|(.*)global_position(.*)|(.*)imu(.*)|(.*)geometric_controller(.*)|(.*)reference(.*)"
+  $ rosbag record -o ~/ -a -x "(.*)theora(.*)|(.*)compressed(.*)|(.*)global_position(.*)|(.*)imu(.*)|(.*)geometric_controller(.*)|(.*)setpoint_raw(.*)|(.*)rgb_camera(.*)|(.*)stereo_module(.*)"
 ```
 
 ## Simulation
