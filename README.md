@@ -100,7 +100,7 @@ $ export GAZEBO_MODEL_PATH=`pwd`/models
 ```
 
 ## Realsense Camera
-| Enable both of depth and color | Only enable depth camera | 
+| Turn on both depth and color cameras | Only turn on depth camera | 
 | --- | --- | 
 | `$ roslaunch realsense2_camera rs_camera.launch depth_width:=640 depth_height:=480 depth_fps:=15` | `$ roslaunch realsense2_camera rs_camera.launch enable_color:=false depth_width:=640 depth_height:=480 depth_fps:=15` |
 |<img src="https://user-images.githubusercontent.com/69444682/171611895-8688d386-2c59-4bc2-8c84-b5b79125be4a.png" width="500"> | <img src="https://user-images.githubusercontent.com/69444682/171611899-26edf6a5-9f61-4861-8b49-e3cb8417f57a.png" width="500"> | 
