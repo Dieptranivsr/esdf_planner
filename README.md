@@ -11,6 +11,7 @@ separate esdf package from [fast_planner](https://github.com/HKUST-Aerial-Roboti
 ## Initialize Depth Camera D435
 ```shell
   $ roslaunch realsense2_camera rs_camera.launch depth_width:=640 depth_height:=480 depth_fps:=15
+  $ roslaunch realsense2_camera rs_camera.launch enable_color:=false depth_width:=640 depth_height:=480 depth_fps:=15
 ```
 
 ## Roslaunch mains_node
