@@ -100,9 +100,8 @@ $ export GAZEBO_MODEL_PATH=`pwd`/models
 ```
 
 ## Realsense Camera
-| Parameter | Case 1 | Case 2 |
-| --- | --- | --- |
+| Command line | Show | 
+| --- | --- | 
 | `$ roslaunch realsense2_camera rs_camera.launch depth_width:=640 depth_height:=480 depth_fps:=15`
- | <img src="https://user-images.githubusercontent.com/69444682/164759327-8f9e85bd-2439-4f18-9384-54d0ad80efd7.png" width="500"> | <img src="https://user-images.githubusercontent.com/69444682/164759514-acb6f927-69d0-4ac4-92b3-7a594d534c2f.png" width="500"> |
- | `$ roslaunch realsense2_camera rs_camera.launch enable_color:=false depth_width:=640 depth_height:=480 depth_fps:=15`
- | <img src="https://user-images.githubusercontent.com/69444682/164759327-8f9e85bd-2439-4f18-9384-54d0ad80efd7.png" width="500"> | <img src="https://user-images.githubusercontent.com/69444682/164759514-acb6f927-69d0-4ac4-92b3-7a594d534c2f.png" width="500"> |
+ | <img src="https://user-images.githubusercontent.com/69444682/164759327-8f9e85bd-2439-4f18-9384-54d0ad80efd7.png" width="500"> | 
+| `$ roslaunch realsense2_camera rs_camera.launch enable_color:=false depth_width:=640 depth_height:=480 depth_fps:=15` | <img src="https://user-images.githubusercontent.com/69444682/164759327-8f9e85bd-2439-4f18-9384-54d0ad80efd7.png" width="500"> | 
